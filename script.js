@@ -40,7 +40,7 @@ const player_choice = function (arr) {
 };
 
 // Call the function
-player_choice(choice_array);
+// player_choice(choice_array);
 
 // A function that plays a single round of Rock Paper Scissors.
 
@@ -110,9 +110,30 @@ const game_simulator = function (computerSelection, playerSelection) {
 };
 
 // Call the game_simulator function with the computer and player's choice.
-game_simulator(get_computer_choice(choice_array), player_weapon);
-
-console.log("Computer-points: " + computer_points);
-console.log("Player-points: " + player_points);
+// game_simulator(get_computer_choice(choice_array), player_weapon);
 
 // The game function - play a 5 round game that keeps score and reports a winner or loser at the end.
+
+const game = function (rounds = 5) {
+  let nr_of_rounds = rounds;
+
+  for (let i = 1; i <= nr_of_rounds; i++) {
+    player_choice(choice_array);
+    game_simulator(get_computer_choice(choice_array), player_weapon);
+    console.log(`nr_of_rounds ${i}`);
+  }
+
+  if (computer_points > player_points) {
+    console.log(
+      `Computer is the WINNER. Score [${computer_points} - ${player_points}]`
+    );
+  } else if (computer_points < player_points) {
+    console.log(
+      `Player is the WINNER. Score [${player_points} - ${computer_points}]`
+    );
+  } else {
+    console.log("DRAW...");
+  }
+};
+
+game();
