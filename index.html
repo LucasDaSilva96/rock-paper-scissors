@@ -8,5 +8,67 @@
     <script defer src="script.js"></script>
     <title>Rock Paper Scissors</title>
   </head>
-  <body></body>
+  <body>
+    <h1>Human vs AI</h1>
+    <main>
+      <section>
+        <div class="container-wrapper">
+          <!-- Human-Score-box -->
+          <div class="score-box">
+            <h2>Human</h2>
+            <p class="score-human">0</p>
+          </div>
+          <!-- Robot-img + random-text container -->
+          <div class="display-container">
+            <div class="display-img">
+              <img
+                class="robot-img"
+                src="imgs/robot-chargin.avif"
+                alt="Robot looking up"
+              />
+            </div>
+            <div class="display-text-and-btn">
+              <p class="quote no-show">Some Random Text</p>
+              <button class="play-btn">Play</button>
+            </div>
+          </div>
+
+          <!-- Robot-Score-box -->
+          <div class="score-box">
+            <h2>AI</h2>
+            <p class="score-robot">0</p>
+          </div>
+        </div>
+        <!-- Choose your weapon-container -->
+        <div class="weapon-container">
+          <div class="choice-box rock">
+            <img class="choice rock-wp" src="imgs/pistol1.avif" alt="pistol" />
+            <div class="overlay">
+              <p class="text">Pistol</p>
+            </div>
+          </div>
+          <div class="choice-box paper">
+            <img
+              class="choice paper-wp"
+              src="imgs/shotgun1.avif"
+              alt="shotgun"
+            />
+            <div class="overlay">
+              <p class="text">Shotgun</p>
+            </div>
+          </div>
+          <div class="choice-box scissors">
+            <img
+              class="choice scissors-wp"
+              src="imgs/sniper.avif"
+              alt="sniper"
+            />
+            <div class="overlay">
+              <p class="text">Sniper</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
