@@ -20,24 +20,24 @@ let computer_points = 0;
 let player_points = 0;
 
 // Prompt the user to make a choice from the choice_array, and the user can not input a higher value then 3 or below 1 - Function
-const player_choice = function (arr) {
-  let choice;
+// const player_choice = function (arr) {
+//   let choice;
 
-  // Keep asking the user for a valid input if input is below 0 or greater then 3.
-  do {
-    choice = Number(
-      prompt(
-        `Please choose your weapon:
-        1: ${arr[0].toUpperCase()}
-        2: ${arr[1].toUpperCase()}
-        3: ${arr[2].toUpperCase()}`
-      )
-    );
-  } while (choice < 1 || choice > 3);
+// Keep asking the user for a valid input if input is below 0 or greater then 3.
+// do {
+//   choice = Number(
+//     prompt(
+//       `Please choose your weapon:
+//       1: ${arr[0].toUpperCase()}
+//       2: ${arr[1].toUpperCase()}
+//       3: ${arr[2].toUpperCase()}`
+//     )
+//   );
+// } while (choice < 1 || choice > 3);
 
-  // The nr that the user input must be reduce by 1 because array's starts at index 0 and not 1.
-  return (player_weapon = arr[choice - 1].toLowerCase());
-};
+// The nr that the user input must be reduce by 1 because array's starts at index 0 and not 1.
+//   return (player_weapon = arr[choice - 1].toLowerCase());
+// };
 
 // Call the function
 // player_choice(choice_array);
