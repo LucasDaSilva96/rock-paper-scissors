@@ -17,3 +17,13 @@
 ## Credit for all images
 
 - All images in this project are from unsplash.com
+
+## Game Logic
+
+- Pistol = Rock
+- Shotgun = Paper
+- Sniper = Scissors
+
+Pistol/Rock wins over Sniper/Scissors
+Shotgun/Paper wins over Pistol/Rock
+Sniper/Scissors wins over Shotgun/Paper
