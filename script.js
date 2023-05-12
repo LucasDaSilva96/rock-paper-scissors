@@ -5,7 +5,9 @@ const play_btn = document.querySelector(".play-btn");
 const quote_text_box = document.querySelector(".quote");
 const robot_img = document.querySelector(".robot-img");
 const human_score_p = document.querySelector(".score-human");
+const human_score_box = document.querySelector(".human-box");
 const ai_score_p = document.querySelector(".score-robot");
+const ai_score_box = document.querySelector(".ai-box");
 const weapons_container = document.querySelector(".weapon-container");
 // Pistol = Rock, Shotgun = Paper & Sniper = Scissors
 const pistol_choice = document.querySelector(".rock");
@@ -67,98 +69,81 @@ sniper_choice.addEventListener("click", function () {
 let computer_points = 0;
 let player_points = 0;
 
-// Prompt the user to make a choice from the choice_array, and the user can not input a higher value then 3 or below 1 - Function
-// const player_choice = function (arr) {
-//   let choice;
-
-// Keep asking the user for a valid input if input is below 0 or greater then 3.
-// do {
-//   choice = Number(
-//     prompt(
-//       `Please choose your weapon:
-//       1: ${arr[0].toUpperCase()}
-//       2: ${arr[1].toUpperCase()}
-//       3: ${arr[2].toUpperCase()}`
-//     )
-//   );
-// } while (choice < 1 || choice > 3);
-
-// The nr that the user input must be reduce by 1 because array's starts at index 0 and not 1.
-//   return (player_weapon = arr[choice - 1].toLowerCase());
-// };
-
-// Call the function
-// player_choice(choice_array);
-
 // A function that plays a single round of Rock Paper Scissors.
 
 const game_simulator = function (computerSelection, playerSelection) {
   // Computer's choice = paper
   if (computerSelection === "paper" && playerSelection === "rock") {
     computer_points++;
-    console.log(
-      `You Lose!, ${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}`
-    );
+    ai_score_p.textContent = `${computer_points}`;
+    ai_score_box.classList.add("shadow-show");
+    human_score_box.classList.remove("shadow-show");
   }
 
   // Computer's choice = paper
   if (computerSelection === "paper" && playerSelection === "scissors") {
     player_points++;
-    console.log(
-      `You Win!, ${playerSelection.toUpperCase()} beats ${computerSelection.toUpperCase()}`
-    );
+    human_score_p.textContent = `${player_points}`;
+    human_score_box.classList.add("shadow-show");
+    ai_score_box.classList.remove("shadow-show");
   }
 
   // Computer's choice = paper
   if (computerSelection === "paper" && playerSelection === "paper") {
-    console.log(`Draw!`);
+    quote_text_box.textContent = "You chose the same weapon as the AI";
+    ai_score_box.classList.remove("shadow-show");
+    human_score_box.classList.remove("shadow-show");
   }
 
   // Computer's choice = rock
   if (computerSelection === "rock" && playerSelection === "rock") {
-    console.log(`Draw!`);
+    quote_text_box.textContent = "You chose the same weapon as the AI";
+    ai_score_box.classList.remove("shadow-show");
+    human_score_box.classList.remove("shadow-show");
   }
 
   // Computer's choice = rock
   if (computerSelection === "rock" && playerSelection === "scissors") {
     computer_points++;
-    console.log(
-      `You Lose!, ${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}`
-    );
+    ai_score_p.textContent = `${computer_points}`;
+    ai_score_box.classList.add("shadow-show");
+    human_score_box.classList.remove("shadow-show");
   }
 
   // Computer's choice = rock
   if (computerSelection === "rock" && playerSelection === "paper") {
     player_points++;
-    console.log(
-      `You Win!, ${playerSelection.toUpperCase()} beats ${computerSelection.toUpperCase()}`
-    );
+    human_score_p.textContent = `${player_points}`;
+    human_score_box.classList.add("shadow-show");
+    ai_score_box.classList.remove("shadow-show");
   }
 
   // Computer's choice = scissors
   if (computerSelection === "scissors" && playerSelection === "paper") {
     computer_points++;
-    console.log(
-      `You Lose!, ${computerSelection.toUpperCase()} beats ${playerSelection.toUpperCase()}`
-    );
+    ai_score_p.textContent = `${computer_points}`;
+    ai_score_box.classList.add("shadow-show");
+    human_score_box.classList.remove("shadow-show");
   }
 
   // Computer's choice = scissors
   if (computerSelection === "scissors" && playerSelection === "rock") {
     player_points++;
-    console.log(
-      `You Win!, ${playerSelection.toUpperCase()} beats ${computerSelection.toUpperCase()}`
-    );
+    human_score_p.textContent = `${player_points}`;
+    human_score_box.classList.add("shadow-show");
+    ai_score_box.classList.remove("shadow-show");
   }
 
   // Computer's choice = scissors
   if (computerSelection === "scissors" && playerSelection === "scissors") {
-    console.log(`Draw!`);
+    quote_text_box.textContent = "You chose the same weapon as the AI";
+    ai_score_box.classList.remove("shadow-show");
+    human_score_box.classList.remove("shadow-show");
   }
 };
 
 // Call the game_simulator function with the computer and player's choice.
-// game_simulator(get_computer_choice(choice_array), player_weapon);
+game_simulator(get_computer_choice(choice_array), player_weapon);
 
 // The game function - play a 5 round game that keeps score and reports a winner or loser at the end.
 
