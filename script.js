@@ -12,6 +12,29 @@ const pistol_choice = document.querySelector(".rock");
 const shotgun_choice = document.querySelector(".paper");
 const sniper_choice = document.querySelector(".scissors");
 
+// Images array
+const images_array = [
+  "imgs/robot-looking-up.avif",
+  "imgs/robot-chargin.avif",
+  "imgs/robot-flying.avif",
+  "imgs/robot-brb.avif",
+];
+
+// Quotes array if player choose right
+const quotes_array_correct = [
+  "Good job!",
+  "Keep going!",
+  "The savior is here!",
+  "You are the chosen one!",
+];
+
+// Quotes array if player choose wrong
+const quotes_array_wrong = [
+  "OMG! Save US!",
+  "NO! Don't let AI win!",
+  "We need help!",
+  "AI is taking over...",
+];
 // The array that contains the different choices that the computer can make.
 const choice_array = ["paper", "rock", "scissors"];
 
