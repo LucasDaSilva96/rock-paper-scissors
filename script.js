@@ -1,5 +1,17 @@
 "use strict";
 
+// DOM - selections
+const play_btn = document.querySelector(".play-btn");
+const quote_text_box = document.querySelector(".quote");
+const robot_img = document.querySelector(".robot-img");
+const human_score_p = document.querySelector(".score-human");
+const ai_score_p = document.querySelector(".score-robot");
+const weapons_container = document.querySelector(".weapon-container");
+// Pistol = Rock, Shotgun = Paper & Sniper = Scissors
+const pistol_choice = document.querySelector(".rock");
+const shotgun_choice = document.querySelector(".paper");
+const sniper_choice = document.querySelector(".scissors");
+
 // The array that contains the different choices that the computer can make.
 const choice_array = ["paper", "rock", "scissors"];
 
@@ -118,9 +130,8 @@ const game = function (rounds = 5) {
   let nr_of_rounds = rounds;
 
   for (let i = 1; i <= nr_of_rounds; i++) {
-    player_choice(choice_array);
+    // player_choice(choice_array);
     game_simulator(get_computer_choice(choice_array), player_weapon);
-    console.log(`nr_of_rounds ${i}`);
   }
 
   if (computer_points > player_points) {
