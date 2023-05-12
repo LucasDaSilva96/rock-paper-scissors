@@ -50,6 +50,19 @@ const get_computer_choice = function (arr) {
 // A global variable to keep track of the user's choice.
 let player_weapon = "";
 
+// Get player's choice
+pistol_choice.addEventListener("click", function () {
+  player_weapon = "rock";
+});
+
+shotgun_choice.addEventListener("click", function () {
+  player_weapon = "paper";
+});
+
+sniper_choice.addEventListener("click", function () {
+  player_weapon = "scissors";
+});
+
 // Global Variables to keep track of the points after each round.
 let computer_points = 0;
 let player_points = 0;
