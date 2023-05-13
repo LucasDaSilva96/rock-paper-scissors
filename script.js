@@ -23,6 +23,12 @@ const images_array = [
   "imgs/robot-brb.avif",
 ];
 
+// Random img picker
+const random_img_generator = function (arr) {
+  let random_nr = Math.floor(Math.random() * arr.length);
+  return arr[random_nr];
+};
+
 // Quotes array if player choose right
 const quotes_array_correct = [
   "Good job!",
@@ -74,6 +80,7 @@ const game_simulator = function (computerSelection, playerSelection) {
     ai_score_box.classList.add("shadow-show");
     human_score_box.classList.remove("shadow-show");
     quote_text_box.textContent = quote_generator(quotes_array_wrong);
+    robot_img.src = `${random_img_generator(images_array)}`;
     point_tracker(computer_points, player_points);
   }
 
@@ -84,6 +91,7 @@ const game_simulator = function (computerSelection, playerSelection) {
     human_score_box.classList.add("shadow-show");
     ai_score_box.classList.remove("shadow-show");
     quote_text_box.textContent = quote_generator(quotes_array_correct);
+    robot_img.src = `${random_img_generator(images_array)}`;
     point_tracker(computer_points, player_points);
   }
 
@@ -92,6 +100,7 @@ const game_simulator = function (computerSelection, playerSelection) {
     quote_text_box.textContent = "Same choose as the AI...";
     ai_score_box.classList.remove("shadow-show");
     human_score_box.classList.remove("shadow-show");
+    robot_img.src = `${random_img_generator(images_array)}`;
     point_tracker(computer_points, player_points);
   }
 
@@ -100,6 +109,7 @@ const game_simulator = function (computerSelection, playerSelection) {
     quote_text_box.textContent = "Same choose as the AI...";
     ai_score_box.classList.remove("shadow-show");
     human_score_box.classList.remove("shadow-show");
+    robot_img.src = `${random_img_generator(images_array)}`;
     point_tracker(computer_points, player_points);
   }
 
@@ -110,6 +120,7 @@ const game_simulator = function (computerSelection, playerSelection) {
     ai_score_box.classList.add("shadow-show");
     human_score_box.classList.remove("shadow-show");
     quote_text_box.textContent = quote_generator(quotes_array_wrong);
+    robot_img.src = `${random_img_generator(images_array)}`;
     point_tracker(computer_points, player_points);
   }
 
@@ -120,6 +131,7 @@ const game_simulator = function (computerSelection, playerSelection) {
     human_score_box.classList.add("shadow-show");
     ai_score_box.classList.remove("shadow-show");
     quote_text_box.textContent = quote_generator(quotes_array_correct);
+    robot_img.src = `${random_img_generator(images_array)}`;
     point_tracker(computer_points, player_points);
   }
 
@@ -130,6 +142,7 @@ const game_simulator = function (computerSelection, playerSelection) {
     ai_score_box.classList.add("shadow-show");
     human_score_box.classList.remove("shadow-show");
     quote_text_box.textContent = quote_generator(quotes_array_wrong);
+    robot_img.src = `${random_img_generator(images_array)}`;
     point_tracker(computer_points, player_points);
   }
 
@@ -140,6 +153,7 @@ const game_simulator = function (computerSelection, playerSelection) {
     human_score_box.classList.add("shadow-show");
     ai_score_box.classList.remove("shadow-show");
     quote_text_box.textContent = quote_generator(quotes_array_correct);
+    robot_img.src = `${random_img_generator(images_array)}`;
     point_tracker(computer_points, player_points);
   }
 
@@ -148,29 +162,22 @@ const game_simulator = function (computerSelection, playerSelection) {
     quote_text_box.textContent = "Same choose as the AI...";
     ai_score_box.classList.remove("shadow-show");
     human_score_box.classList.remove("shadow-show");
+    robot_img.src = `${random_img_generator(images_array)}`;
     point_tracker(computer_points, player_points);
   }
 };
 
 // The game function - play a 5 round game that keeps score and reports a winner or loser at the end.
 const point_tracker = function (computer_points, player_points) {
-  if (computer_points === 5) {
+  if (computer_points === 5 || computer_points > 5) {
     h1.textContent = "You LOST the game...";
-    player_points = 0;
-    computer_points = 0;
-    human_score_p.textContent = `${player_points}`;
-    ai_score_p.textContent = `${computer_points}`;
     play_btn.textContent = "Play Again";
     play_btn.classList.remove("no-show");
     quote_text_box.classList.add("no-show");
     weapons_container.classList.add("no-show");
   }
-  if (player_points === 5) {
+  if (player_points === 5 || player_points > 5) {
     h1.textContent = "You are the WINNER!";
-    player_points = 0;
-    computer_points = 0;
-    human_score_p.textContent = `${player_points}`;
-    ai_score_p.textContent = `${computer_points}`;
     play_btn.textContent = "Play Again";
     play_btn.classList.remove("no-show");
     quote_text_box.classList.add("no-show");
@@ -209,7 +216,13 @@ const player_choice = function () {
 
 // The Play function
 play_btn.addEventListener("click", function () {
+  player_points = 0;
+  computer_points = 0;
+  human_score_p.textContent = `${player_points}`;
+  ai_score_p.textContent = `${computer_points}`;
+  h1.textContent = "Save Mankind";
   play_btn.classList.add("no-show");
+  quote_text_box.textContent = "Choose your weapon";
   quote_text_box.classList.remove("no-show");
   weapons_container.classList.remove("no-show");
 
