@@ -6,13 +6,13 @@
 
 - Create a function that returns either 'rock', 'paper', or 'scissor'.
 
-- Create a function that prompt's the user to choose between rock, paper and scissors, and return that value + save the value in a global variable.
-
 - Create two global variables that stores the amount of point that the computer/player has.
 
-- Create a function that plays a single round of Rock Paper Scissors. The function should take two parameters - the playerSelection and the ComputerSelection, and then return a single string that declares the winner of the round. (This function should be case-insensitive) AND updates the amount of points that the WINNER has by 1.
+- Create a function that gets the user's choice and save it on a global variable
 
-- Create the game function. The function should keep track of rounds, update the winner's-score after each round and in the end log the winner.
+- Create a function that plays the game of Rock Paper Scissors. The function should take two parameters - the playerSelection and the ComputerSelection, and then return the winner of the round. (This function should be case-insensitive) AND updates the amount of points that the WINNER has by 1.
+
+- Create a function that keeps track of the points. The function should update the winner's-score after each round and in the end announce the winner.
 
 ## Credit for all images
 
