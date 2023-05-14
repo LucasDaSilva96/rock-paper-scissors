@@ -70,7 +70,7 @@ let player_weapon = "";
 let computer_points = 0;
 let player_points = 0;
 
-// A function that plays a single round of Rock Paper Scissors.
+// The function that is in charge of the game play
 
 const game_simulator = function (computerSelection, playerSelection) {
   // Computer's choice = paper
@@ -168,20 +168,24 @@ const game_simulator = function (computerSelection, playerSelection) {
 };
 
 // The game function - play a 5 round game that keeps score and reports a winner or loser at the end.
-const point_tracker = function (computer_points, player_points) {
-  if (computer_points === 5 || computer_points > 5) {
+const point_tracker = function (computerPoints, playerPoints) {
+  if (computerPoints === 5 || computerPoints > 5) {
     h1.textContent = "You LOST the game...";
     play_btn.textContent = "Play Again";
     play_btn.classList.remove("no-show");
     quote_text_box.classList.add("no-show");
     weapons_container.classList.add("no-show");
+    player_points = 0;
+    computer_points = 0;
   }
-  if (player_points === 5 || player_points > 5) {
+  if (playerPoints === 5 || playerPoints > 5) {
     h1.textContent = "You are the WINNER!";
     play_btn.textContent = "Play Again";
     play_btn.classList.remove("no-show");
     quote_text_box.classList.add("no-show");
     weapons_container.classList.add("no-show");
+    player_points = 0;
+    computer_points = 0;
   }
 };
 
@@ -218,13 +222,13 @@ const player_choice = function () {
 play_btn.addEventListener("click", function () {
   player_points = 0;
   computer_points = 0;
-  human_score_p.textContent = `${player_points}`;
-  ai_score_p.textContent = `${computer_points}`;
+  human_score_p.textContent = 0;
+  ai_score_p.textContent = 0;
   h1.textContent = "Save Mankind";
   play_btn.classList.add("no-show");
   quote_text_box.textContent = "Choose your weapon";
   quote_text_box.classList.remove("no-show");
   weapons_container.classList.remove("no-show");
-
-  player_choice();
 });
+
+player_choice();
