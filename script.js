@@ -190,9 +190,9 @@ const point_tracker = function (computerPoints, playerPoints) {
 };
 
 // Get player's choice
+let rounds = 1;
 const player_choice = function () {
   const boxes = document.querySelectorAll(".choice-box");
-  let rounds = 1;
   boxes.forEach((el) => {
     el.addEventListener("click", function () {
       h1.textContent = `Round: ${rounds}`;
@@ -222,6 +222,7 @@ const player_choice = function () {
 play_btn.addEventListener("click", function () {
   player_points = 0;
   computer_points = 0;
+  rounds = 1;
   human_score_p.textContent = 0;
   ai_score_p.textContent = 0;
   h1.textContent = "Save Mankind";
