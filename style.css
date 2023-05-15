@@ -25,12 +25,20 @@ h1 {
   text-align: center;
 }
 
+section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .container-wrapper {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  padding: 1rem;
+  justify-content: center;
+  padding: 0.5rem;
 }
 
 .display-container {
@@ -80,6 +88,8 @@ h1 {
   font-size: 22px;
   font-weight: bold;
   padding: 1rem;
+  color: #000000;
+  background-color: whitesmoke;
   border-radius: 0.5rem;
   border: none;
   transition: all 0.4s ease;
@@ -104,6 +114,7 @@ h1 {
   align-items: center;
   justify-content: space-around;
   transition: all 0.4s ease;
+  gap: 1rem;
 }
 
 .choice {
@@ -170,3 +181,44 @@ h1 {
   transform: translateY(-10px);
 }
 /* ********************************* */
+
+/* Media queries */
+@media (max-width: 750px) {
+  .choice,
+  .overlay {
+    height: 140px;
+    width: 120px;
+  }
+
+  .weapon-container {
+    gap: 1rem;
+  }
+  .score-box {
+    width: 100px;
+    height: 100px;
+  }
+
+  .robot-img {
+    width: 200px;
+    height: 220px;
+  }
+}
+
+@media (max-width: 485px) {
+  .choice,
+  .overlay {
+    width: 110px;
+  }
+
+  .display-container {
+    width: 200px;
+  }
+
+  .score-box {
+    width: 75px;
+  }
+
+  .container-wrapper {
+    gap: 0.3rem;
+  }
+}
