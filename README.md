@@ -1,5 +1,7 @@
 # rock-paper-scissors
 
+## Live-code: https://lucasdasilva96.github.io/rock-paper-scissors/
+
 ## The Pseudo Code
 
 - Created an array with the values: 'rock', 'paper', 'scissor'.
