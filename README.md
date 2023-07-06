@@ -1,6 +1,6 @@
 # rock-paper-scissors
 
-## Live-code: https://lucasdasilva96.github.io/rock-paper-scissors/
+## Live-code: https://lucasdasilva96.github.io/rock-paper-scissors/index.html
 
 ## The Pseudo Code
 
